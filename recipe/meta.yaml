@@ -1,4 +1,4 @@
-{% set version = "2022.0.0a10" %}
+{% set version = "2023.0.0a1" %}
 
 package:
   name: lsprotocol
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/l/lsprotocol/lsprotocol-{{ version }}.tar.gz
-    sha256: 2cd78770b7a4ec979f3ee3761265effd50ea0f5e858ce21bf2fba972e1783c50
+    sha256: 32edfd4856abba1349bf5a070567445b3d7286951afba3644b472629796f82d0
   - folder: src
     url: https://github.com/microsoft/lsprotocol/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 18efedac65c72d62fee05fce6a701d547939faf098f8b2b0b8782736f095dd87
+    sha256: 495e004c38c4f5986c59b1241c478e76e0c79107005e276879e1f34c60e3b5bd
 
 build:
   noarch: python
@@ -29,13 +29,14 @@ requirements:
 
 test:
   source_files:
+    - src/conftest.py
     - src/tests
     - src/generator
   imports:
     - lsprotocol
   commands:
     - pip check
-    - cd src && pytest ./tests -vv --cov=lsprotocol --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=94
+    - cd src && pytest ./tests -vv --cov=lsprotocol --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92
   requires:
     - pyhamcrest
     - importlib_resources

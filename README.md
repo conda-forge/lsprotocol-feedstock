@@ -1,11 +1,11 @@
-About lsprotocol
-================
+About lsprotocol-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lsprotocol-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pypi.org/project/lsprotocol
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lsprotocol-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python implementation of the Language Server Protocol.
 

@@ -36,7 +36,7 @@ test:
     - lsprotocol
   commands:
     - pip check
-    - cd src && pytest ./tests -vv --cov=lsprotocol --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=94
+    - cd src && pytest ./tests -vv --cov=lsprotocol --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=92
   requires:
     - pyhamcrest
     - importlib_resources

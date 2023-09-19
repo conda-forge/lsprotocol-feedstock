@@ -1,4 +1,4 @@
-{% set version = "2023.0.0a3" %}
+{% set version = "2023.0.0b1" %}
 
 package:
   name: lsprotocol
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/l/lsprotocol/lsprotocol-{{ version }}.tar.gz
-    sha256: d704e4e00419f74bece9795de4b34d02aa555fc0131fec49f59ac9eb46816e51
+    sha256: f7a2d4655cbd5639f373ddd1789807450c543341fa0a32b064ad30dbb9f510d4
   - folder: src
     url: https://github.com/microsoft/lsprotocol/archive/refs/tags/{{ version }}.tar.gz
-    sha256: d548ec6444bca7e70f7a3f4346972a04d6ad73c9bf33020ce2f28b8d8bf350fe
+    sha256: 4d5b026943093dc7e6b4eca11f5e158dd10a3e9364dff84064077dd94e6daf78
 
 build:
   noarch: python

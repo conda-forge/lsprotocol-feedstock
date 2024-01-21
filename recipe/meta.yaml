@@ -1,4 +1,4 @@
-{% set version = "2023.0.0" %}
+{% set version = "2023.0.1" %}
 
 package:
   name: lsprotocol
@@ -7,14 +7,14 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/l/lsprotocol/lsprotocol-{{ version }}.tar.gz
-    sha256: c9d92e12a3f4ed9317d3068226592860aab5357d93cf5b2451dc244eee8f35f2
+    sha256: cc5c15130d2403c18b734304339e51242d3018a05c4f7d0f198ad6e0cd21861d
   - folder: src
     url: https://github.com/microsoft/lsprotocol/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 2e53de0758a7aace695cc232fc8ecf1da93f15c6185dcd491fceaabd720a440d
+    sha256: 0697ef66ca1b547cadb4c27080d6095c2e403b9aeb05401de383126a70720a56
 
 build:
   noarch: python
-  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-build-isolation
+  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   number: 0
 
 requirements:
@@ -24,7 +24,7 @@ requirements:
     - python >=3.7
   run:
     - attrs >=21.3.0
-    - cattrs
+    - cattrs !=23.2.1
     - python >=3.7
 
 test:

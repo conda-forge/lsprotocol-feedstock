@@ -14,7 +14,7 @@ source:
 
 build:
   noarch: python
-  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-build-isolation
+  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   number: 0
 
 requirements:
@@ -24,7 +24,7 @@ requirements:
     - python >=3.7
   run:
     - attrs >=21.3.0
-    - cattrs
+    - cattrs !=23.2.1
     - python >=3.7
 
 test:

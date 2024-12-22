@@ -6,7 +6,7 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.io/packages/source/l/lsprotocol/lsprotocol-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/l/lsprotocol/lsprotocol-{{ version }}.tar.gz
     sha256: cc5c15130d2403c18b734304339e51242d3018a05c4f7d0f198ad6e0cd21861d
   - folder: src
     url: https://github.com/microsoft/lsprotocol/archive/refs/tags/{{ version }}.tar.gz
@@ -15,17 +15,17 @@ source:
 build:
   noarch: python
   script: cd dist && {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
-  number: 0
+  number: 1
 
 requirements:
   host:
     - flit-core >=3.2,<4
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - attrs >=21.3.0
     - cattrs !=23.2.1
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -43,6 +43,7 @@ test:
     - jsonschema
     - pip
     - pytest-cov
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/lsprotocol

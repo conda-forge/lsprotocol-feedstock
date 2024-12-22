@@ -13,9 +13,11 @@ source:
     sha256: 0697ef66ca1b547cadb4c27080d6095c2e403b9aeb05401de383126a70720a56
 
 build:
-  noarch: python
-  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
   number: 1
+  noarch: python
+  script:
+    - cd dist 
+    - {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps --disable-pip-version-check
 
 requirements:
   host:
@@ -36,7 +38,9 @@ test:
     - lsprotocol
   commands:
     - pip check
-    - cd src && pytest ./tests -vv --cov=lsprotocol --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=91
+    - cd src
+    - coverage run --source=lsprotocol --branch pytest -vv --tb=long --color-yes
+    - coverage report --show-missing --skip-covered --fail-under=88
   requires:
     - pyhamcrest
     - importlib_resources

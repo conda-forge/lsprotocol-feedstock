@@ -12,8 +12,8 @@ source:
   - url: https://pypi.org/packages/source/l/lsprotocol/lsprotocol-${{ version }}.tar.gz
     sha256: d3667fb70894d361aa6c495c5c8a1b2e6a44be65ff84c21a9cbb67ebfb4830fd
     target_directory: dist
-  - url: https://github.com/microsoft/lsprotocol/archive/refs/tags/${{ version }}.tar.gz
-    sha256: 0697ef66ca1b547cadb4c27080d6095c2e403b9aeb05401de383126a70720a56
+  - url: https://github.com/microsoft/lsprotocol/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 45133c023a37603660b530a284a5aa352f296dccaa9a3fc37190f948bd2cff55
     target_directory: src
 
 build:
@@ -31,6 +31,7 @@ requirements:
   run:
     - attrs >=21.3.0
     - cattrs !=23.2.1
+    - importlib_resources
     - python >=${{ python_min }}
 
 tests:
@@ -47,7 +48,6 @@ tests:
         - src/generator
     requirements:
       run:
-        - importlib_resources
         - jsonschema
         - pyhamcrest
         - pytest-cov

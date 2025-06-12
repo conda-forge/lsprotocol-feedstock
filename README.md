@@ -34,14 +34,14 @@ Current release info
 Installing lsprotocol
 =====================
 
-Installing `lsprotocol` from the `conda-forge/label/lsprotocol_beta` channel can be achieved by adding `conda-forge/label/lsprotocol_beta` to your channels with:
+Installing `lsprotocol` from the `conda-forge/label/lsprotocol_rc` channel can be achieved by adding `conda-forge/label/lsprotocol_rc` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/lsprotocol_beta
+conda config --add channels conda-forge/label/lsprotocol_rc
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/lsprotocol_beta` channel has been enabled, `lsprotocol` can be installed with `conda`:
+Once the `conda-forge/label/lsprotocol_rc` channel has been enabled, `lsprotocol` can be installed with `conda`:
 
 ```
 conda install lsprotocol
@@ -56,26 +56,26 @@ mamba install lsprotocol
 It is possible to list all of the versions of `lsprotocol` available on your platform with `conda`:
 
 ```
-conda search lsprotocol --channel conda-forge/label/lsprotocol_beta
+conda search lsprotocol --channel conda-forge/label/lsprotocol_rc
 ```
 
 or with `mamba`:
 
 ```
-mamba search lsprotocol --channel conda-forge/label/lsprotocol_beta
+mamba search lsprotocol --channel conda-forge/label/lsprotocol_rc
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search lsprotocol --channel conda-forge/label/lsprotocol_beta
+mamba repoquery search lsprotocol --channel conda-forge/label/lsprotocol_rc
 
 # List packages depending on `lsprotocol`:
-mamba repoquery whoneeds lsprotocol --channel conda-forge/label/lsprotocol_beta
+mamba repoquery whoneeds lsprotocol --channel conda-forge/label/lsprotocol_rc
 
 # List dependencies of `lsprotocol`:
-mamba repoquery depends lsprotocol --channel conda-forge/label/lsprotocol_beta
+mamba repoquery depends lsprotocol --channel conda-forge/label/lsprotocol_rc
 ```
 
 

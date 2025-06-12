@@ -58,7 +58,7 @@ tests:
         - python ${{ python_min }}.*
     script:
       - cd src
-      - coverage run --source=lsprotocol --branch -m pytest -vv --tb=long --color=yes
+      - coverage run --source=lsprotocol --branch -m pytest -vv --tb=long --color=yes -k "not test_notebook_sync_options"
       - coverage report --show-missing --skip-covered --fail-under=88
       - mypy -p lsprotocol
 

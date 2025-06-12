@@ -3,7 +3,7 @@ cdt_name:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge lsprotocol_beta
+- conda-forge lsprotocol_rc
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 python_min:

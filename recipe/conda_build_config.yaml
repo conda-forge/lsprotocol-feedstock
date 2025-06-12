@@ -1,2 +1,2 @@
 channel_targets:
-  - conda-forge lsprotocol_beta
+  - conda-forge lsprotocol_rc

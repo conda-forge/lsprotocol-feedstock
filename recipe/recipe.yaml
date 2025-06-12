@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 2024.0.0b1
+  version: 2025.0.0rc1
 
 package:
   name: lsprotocol
@@ -10,10 +10,13 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/l/lsprotocol/lsprotocol-${{ version }}.tar.gz
-    sha256: d3667fb70894d361aa6c495c5c8a1b2e6a44be65ff84c21a9cbb67ebfb4830fd
+    sha256: 22ee3dc898f0d15b7befeb923073e46e1cd2661c01365f7f7da113d1f168c555
     target_directory: dist
-  - url: https://github.com/microsoft/lsprotocol/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 45133c023a37603660b530a284a5aa352f296dccaa9a3fc37190f948bd2cff55
+  - url:
+      # handle inconsistent upstream tag pattern
+      - https://github.com/microsoft/lsprotocol/archive/refs/tags/v${{ version }}.tar.gz
+      - https://github.com/microsoft/lsprotocol/archive/refs/tags/${{ version }}.tar.gz
+    sha256: 87875fa8e3c91c3f94269ebf7c978c290410c1dd378857f36dd3a632c2d9fd24
     target_directory: src
 
 build:
